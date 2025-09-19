@@ -1,0 +1,22 @@
+services:
+  playwright:
+    build: .
+    env_file:
+      - .env
+    environment:
+      # Fallback health check target used by the wait script when PLAYWRIGHT_HEALTHCHECK_URL is undefined.
+      PLAYWRIGHT_BASE_URL: ${PLAYWRIGHT_BASE_URL:-http://localhost:3000}
+      PLAYWRIGHT_API_URL: ${PLAYWRIGHT_API_URL:-http://localhost:8000/api/v1}
+    volumes:
+      - ./tests:/app/tests
+      - ./playwright-report:/app/playwright-report
+    command: >-
+      bash -lc "\
+        HEALTH_URL=${PLAYWRIGHT_HEALTHCHECK_URL:-$${PLAYWRIGHT_BASE_URL}/health} && \
+        echo \"Waiting for $$HEALTH_URL\" && \
+        npx ts-node --project tsconfig.json scripts/wait-for-service.ts $$HEALTH_URL 180000 5000 && \
+        npx playwright test --reporter=html,list\
+      "
+    network_mode: host
+
+volumes: {}

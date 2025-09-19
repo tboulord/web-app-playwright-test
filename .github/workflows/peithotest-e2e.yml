@@ -1,0 +1,85 @@
+name: Build & Test PeithoTest
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PRIVATE_REPO_SSH: git@github.com:tboulord/PeithoTest.git
+  DOCKER_COMPOSE_PATH: docker-compose.yml
+  PLAYWRIGHT_BASE_URL: http://localhost:3000
+  PLAYWRIGHT_API_URL: http://localhost:8000/api/v1
+  PLAYWRIGHT_HEALTHCHECK_URL: http://localhost:3000/health
+  PLAYWRIGHT_API_HEALTHCHECK_URL: http://localhost:8000/health
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Playwright project
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add GitHub to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Clone private PeithoTest repository
+        run: git clone $PRIVATE_REPO_SSH private-peithotest
+
+      - name: Boot PeithoTest stack
+        working-directory: private-peithotest
+        run: docker compose -f "$DOCKER_COMPOSE_PATH" up -d --build
+
+      - name: Wait for UI service
+        run: npm exec ts-node -- --project tsconfig.json scripts/wait-for-service.ts "$PLAYWRIGHT_HEALTHCHECK_URL" 240000 5000
+
+      - name: Wait for API service
+        run: npm exec ts-node -- --project tsconfig.json scripts/wait-for-service.ts "$PLAYWRIGHT_API_HEALTHCHECK_URL" 240000 5000
+
+      - name: Run Playwright tests
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ env.PLAYWRIGHT_BASE_URL }}
+          PLAYWRIGHT_API_URL: ${{ env.PLAYWRIGHT_API_URL }}
+        run: npm test
+
+      - name: Upload Playwright HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-html-report
+          path: playwright-report
+          retention-days: 14
+
+      - name: Upload Playwright traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: playwright-report/data
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Shutdown PeithoTest stack
+        if: always()
+        working-directory: private-peithotest
+        run: docker compose -f "$DOCKER_COMPOSE_PATH" down -v
