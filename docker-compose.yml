@@ -17,6 +17,5 @@ services:
         npx ts-node --project tsconfig.json scripts/wait-for-service.ts $$HEALTH_URL 180000 5000 && \
         npx playwright test --reporter=html,list\
       "
-    network_mode: host
 
 volumes: {}
