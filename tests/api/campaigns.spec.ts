@@ -6,7 +6,7 @@ test.describe('Campaign management API', () => {
     adminCredentials,
     campaignPayload,
   }) => {
-    const loginResponse = await request.post('/auth/login', {
+    const loginResponse = await request.post('auth/login', {
       data: adminCredentials,
     });
 
@@ -15,7 +15,7 @@ test.describe('Campaign management API', () => {
     expect.soft(loginBody).toMatchObject({ access_token: expect.any(String) });
 
     const accessToken: string = loginBody.access_token;
-    const createResponse = await request.post('/campaigns', {
+    const createResponse = await request.post('campaigns', {
       data: campaignPayload,
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -33,7 +33,7 @@ test.describe('Campaign management API', () => {
     const campaignId: string = createdCampaign.id;
     expect(campaignId).toBeTruthy();
 
-    const deleteResponse = await request.delete(`/campaigns/${campaignId}`, {
+    const deleteResponse = await request.delete(`campaigns/${campaignId}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -41,7 +41,7 @@ test.describe('Campaign management API', () => {
 
     expect(deleteResponse.status(), 'campaign deletion should return 204').toBe(204);
 
-    const fetchResponse = await request.get(`/campaigns/${campaignId}`, {
+    const fetchResponse = await request.get(`campaigns/${campaignId}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
