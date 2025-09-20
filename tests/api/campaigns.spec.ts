@@ -1,4 +1,43 @@
+import type { APIRequestContext, APIResponse } from '@playwright/test';
 import { expect, test } from '../fixtures/test-fixtures';
+
+const wait = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
+const waitForBackendReadiness = async (
+  requestContext: APIRequestContext,
+  baseUrl: string,
+  {
+    timeoutMs = 15_000,
+    pollIntervalMs = 500,
+  }: { timeoutMs?: number; pollIntervalMs?: number } = {}
+): Promise<void> => {
+  const healthUrl = new URL('/health', baseUrl).toString();
+  const deadline = Date.now() + timeoutMs;
+  let lastError: unknown;
+
+  while (Date.now() < deadline) {
+    try {
+      const response = await requestContext.get(healthUrl);
+      if (response.ok()) {
+        return;
+      }
+
+      lastError = new Error(`Received status ${response.status()} from ${healthUrl}`);
+    } catch (error) {
+      lastError = error;
+    }
+
+    await wait(pollIntervalMs);
+  }
+
+  const errorMessage =
+    lastError instanceof Error ? lastError.message : String(lastError ?? 'Unknown error');
+
+  throw new Error(
+    `Backend at "${baseUrl}" did not become ready within ${timeoutMs}ms. Last error: ${errorMessage}`
+  );
+};
 
 test.describe('Campaign management API', () => {
   test('allows admin to create and delete a campaign', async ({
