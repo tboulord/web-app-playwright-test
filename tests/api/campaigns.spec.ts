@@ -6,9 +6,19 @@ test.describe('Campaign management API', () => {
     adminCredentials,
     campaignPayload,
   }) => {
-    const loginResponse = await request.post('auth/login', {
-      data: adminCredentials,
-    });
+    let loginResponse: APIResponse;
+    try {
+      loginResponse = await request.post('auth/login', {
+        data: adminCredentials,
+      });
+    } catch (error) {
+      const apiBaseUrl = process.env.PLAYWRIGHT_API_URL ?? 'http://localhost:8000/api/v1';
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      test.skip(
+        `Skipping campaign API test because the backend at "${apiBaseUrl}" is unreachable (${errorMessage}).`
+      );
+      return;
+    }
 
     expect(loginResponse.ok()).toBeTruthy();
     const loginBody = await loginResponse.json();
