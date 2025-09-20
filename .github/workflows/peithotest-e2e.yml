@@ -10,7 +10,6 @@ env:
   PRIVATE_REPO_SSH: git@github.com:tboulord/PeithoTest.git
   DOCKER_COMPOSE_PATH: docker-compose.yml
   PLAYWRIGHT_BASE_URL: http://localhost:3000
-  PLAYWRIGHT_API_URL: http://localhost:8000/api/v1
 
 jobs:
   e2e:
@@ -51,7 +50,6 @@ jobs:
       - name: Run Playwright tests
         env:
           PLAYWRIGHT_BASE_URL: ${{ env.PLAYWRIGHT_BASE_URL }}
-          PLAYWRIGHT_API_URL: ${{ env.PLAYWRIGHT_API_URL }}
         run: npm test
 
       - name: Upload Playwright HTML report
