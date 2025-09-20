@@ -5,16 +5,7 @@ import path from 'path';
 // Load environment variables from .env when present.
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 
-type ProjectName = 'ui' | 'api';
-
 const baseUiUrl = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:3000';
-
-const ensureTrailingSlash = (url: string): string =>
-  url.endsWith('/') ? url : `${url}/`;
-
-const baseApiUrl = ensureTrailingSlash(
-  process.env.PLAYWRIGHT_API_URL ?? 'http://localhost:8000/api/v1'
-);
 const expectTimeout = process.env.PLAYWRIGHT_EXPECT_TIMEOUT
   ? Number(process.env.PLAYWRIGHT_EXPECT_TIMEOUT)
   : undefined;
@@ -31,12 +22,10 @@ export default defineConfig({
   ],
   use: {
     trace: 'retain-on-failure',
-    video: process.env.CI ? 'retain-on-failure' : 'on-first-retry',
+    video: 'on',
     screenshot: 'only-on-failure',
     ignoreHTTPSErrors: true,
-    extraHTTPHeaders: {
-      'Accept': 'application/json, text/plain, */*'
-    }
+    baseURL: baseUiUrl,
   },
   expect: {
     timeout: expectTimeout
@@ -47,15 +36,7 @@ export default defineConfig({
       testDir: './tests/ui',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: baseUiUrl
-      }
-    },
-    {
-      name: 'api',
-      testDir: './tests/api',
-      use: {
-        baseURL: baseApiUrl
       }
     }
-  ] satisfies { name: ProjectName; testDir: string; use: Record<string, unknown> }[]
+  ]
 });
