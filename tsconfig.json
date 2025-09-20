@@ -11,6 +11,6 @@
     "rootDir": ".",
     "outDir": "dist"
   },
-  "include": ["playwright.config.ts", "tests", "scripts"],
+  "include": ["playwright.config.ts", "tests"],
   "exclude": ["dist", "node_modules"]
 }
