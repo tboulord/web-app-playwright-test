@@ -12,9 +12,12 @@ services:
       - ./playwright-report:/app/playwright-report
     command: >-
       bash -lc "\
-        HEALTH_URL=${PLAYWRIGHT_HEALTHCHECK_URL:-$${PLAYWRIGHT_BASE_URL}/health} && \
-        echo \"Waiting for $$HEALTH_URL\" && \
-        npx ts-node --project tsconfig.json scripts/wait-for-service.ts $$HEALTH_URL 180000 5000 && \
+        UI_HEALTH_URL=${PLAYWRIGHT_HEALTHCHECK_URL:-$${PLAYWRIGHT_BASE_URL}} && \
+        API_HEALTH_URL=${PLAYWRIGHT_API_HEALTHCHECK_URL:-$${PLAYWRIGHT_API_URL}/health} && \
+        echo \"Waiting for $$UI_HEALTH_URL\" && \
+        npx ts-node --project tsconfig.json scripts/wait-for-service.ts $$UI_HEALTH_URL 180000 5000 && \
+        echo \"Waiting for $$API_HEALTH_URL\" && \
+        npx ts-node --project tsconfig.json scripts/wait-for-service.ts $$API_HEALTH_URL 180000 5000 && \
         npx playwright test --reporter=html,list\
       "
 
