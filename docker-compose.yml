@@ -5,7 +5,7 @@ services:
       - .env
     environment:
       PLAYWRIGHT_BASE_URL: ${PLAYWRIGHT_BASE_URL:-http://localhost:3000}
-      PLAYWRIGHT_API_URL: ${PLAYWRIGHT_API_URL:-http://localhost:8000/api/v1}
+      PLAYWRIGHT_API_URL: ${PLAYWRIGHT_API_URL:-http://backend:8000/api/v1}
     volumes:
       - ./tests:/app/tests
       - ./playwright-report:/app/playwright-report
