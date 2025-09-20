@@ -11,8 +11,8 @@ env:
   DOCKER_COMPOSE_PATH: docker-compose.yml
   PLAYWRIGHT_BASE_URL: http://frontend:3000
   PLAYWRIGHT_API_URL: http://backend:8000/api/v1
-  PLAYWRIGHT_HEALTHCHECK_URL: http://frontend:3000/health
-  PLAYWRIGHT_API_HEALTHCHECK_URL: http://backend:8000/health
+  PLAYWRIGHT_HEALTHCHECK_URL: http://localhost:3000/health
+  PLAYWRIGHT_API_HEALTHCHECK_URL: http://localhost:8000/health
 
 jobs:
   e2e:
