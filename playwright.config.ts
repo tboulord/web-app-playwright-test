@@ -8,7 +8,7 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
 type ProjectName = 'ui' | 'api';
 
 const baseUiUrl = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:3000';
-const baseApiUrl = process.env.PLAYWRIGHT_API_URL ?? 'http://backend:8000/api/v1';
+const baseApiUrl = process.env.PLAYWRIGHT_API_URL ?? 'http://localhost:8000/api/v1';
 const expectTimeout = process.env.PLAYWRIGHT_EXPECT_TIMEOUT
   ? Number(process.env.PLAYWRIGHT_EXPECT_TIMEOUT)
   : undefined;

@@ -10,7 +10,7 @@ env:
   PRIVATE_REPO_SSH: git@github.com:tboulord/PeithoTest.git
   DOCKER_COMPOSE_PATH: docker-compose.yml
   PLAYWRIGHT_BASE_URL: http://localhost:3000
-  PLAYWRIGHT_API_URL: http://backend:8000/api/v1
+  PLAYWRIGHT_API_URL: http://localhost:8000/api/v1
 
 jobs:
   e2e:
