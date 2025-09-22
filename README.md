@@ -12,6 +12,7 @@ Playwright reports as workflow artifacts.
   deploy keys, build the application with `docker-compose`, and run the tests.
 - Shared fixtures and data helpers that keep test code lean and focused on behaviour.
 - Video capture enabled for every UI test run to simplify debugging.
+- Allure-compatible reporter with automated GitHub Pages publishing for rich test analytics.
 
 ## Test Suite Layout
 
@@ -159,11 +160,28 @@ During CI the workflow will:
 - Start the PeithoTest stack using its `docker-compose.yml` file.
 - Execute the Playwright UI suite.
 - Upload the Playwright HTML report and traces as workflow artifacts.
+- Publish Allure results as artifacts and promote the HTML dashboard to GitHub Pages for easy sharing.
 
 The `peithotest-e2e.yml` workflow still clones the private application repository before booting the
 stack. With `docker-compose` exposing the frontend (`3000:3000`), backend (`8000:8000`), and mock
 chatbot (`8080:8080`) services on the GitHub runner, the Playwright job can rely on the documented
 `PLAYWRIGHT_BASE_URL` and `PLAYWRIGHT_API_URL` defaults to reach the stack over `localhost`.
+
+### Allure reporting
+
+Every Playwright execution now emits Allure-compatible JSON results under `allure-results/`.
+To review them locally install the Allure CLI (for example via
+[`npm install -g allure-commandline`](https://docs.qameta.io/allure/#_get_started)) and run:
+
+```bash
+allure generate allure-results --clean -o allure-report
+allure open allure-report
+```
+
+In CI the workflow relies on the community `simple-elf/allure-report-action` to transform the
+results into the familiar Allure HTML dashboard and push it to the `gh-pages` branch. The latest
+report is therefore always available through the repository's GitHub Pages site without requiring a
+manual download from the Actions UI.
 
 ## Repository Layout
 

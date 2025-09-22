@@ -24,7 +24,8 @@ export default defineConfig({
   workers: process.env.CI ? 4 : undefined,
   reporter: [
     ['list'],
-    ['html', { open: 'never' }]
+    ['html', { open: 'never' }],
+    ['./tests/reporters/simple-allure-reporter.ts']
   ],
   use: {
     trace: 'on-first-retry',
