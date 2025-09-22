@@ -9,8 +9,10 @@ permissions:
 env:
   PRIVATE_REPO_SSH: git@github.com:tboulord/PeithoTest.git
   DOCKER_COMPOSE_PATH: docker-compose.yml
-  PLAYWRIGHT_BASE_URL: http://frontend:3000
-  PLAYWRIGHT_API_URL: http://backend:8000/api/v1
+  PLAYWRIGHT_BASE_URL: http://localhost:3000
+  PLAYWRIGHT_API_URL: http://localhost:8000/api/v1
+  PLAYWRIGHT_HEALTHCHECK_URL: http://localhost:8000/health
+  PLAYWRIGHT_MOCKCHAT_URL: http://localhost:8080
 
 jobs:
   e2e:
@@ -48,79 +50,38 @@ jobs:
         working-directory: private-peithotest
         run: docker compose -f "$DOCKER_COMPOSE_PATH" up -d --build
 
-      - name: Run Playwright UI tests
+      - name: Run Playwright test suite
         env:
           PLAYWRIGHT_BASE_URL: ${{ env.PLAYWRIGHT_BASE_URL }}
           PLAYWRIGHT_API_URL: ${{ env.PLAYWRIGHT_API_URL }}
-        run: npm run test:ui
-
-      - name: Collect Playwright UI report
-        if: ${{ always() }}
-        run: |
-          if [ -d playwright-report ]; then
-            mv playwright-report playwright-report-ui
-          fi
-
-      - name: Run Playwright API tests
-        env:
-          PLAYWRIGHT_BASE_URL: ${{ env.PLAYWRIGHT_BASE_URL }}
-          PLAYWRIGHT_API_URL: ${{ env.PLAYWRIGHT_API_URL }}
-        run: npm run test:api
-
-      - name: Collect Playwright API report
-        if: ${{ always() }}
-        run: |
-          if [ -d playwright-report ]; then
-            mv playwright-report playwright-report-api
-          fi
+          PLAYWRIGHT_HEALTHCHECK_URL: ${{ env.PLAYWRIGHT_HEALTHCHECK_URL }}
+          PLAYWRIGHT_MOCKCHAT_URL: ${{ env.PLAYWRIGHT_MOCKCHAT_URL }}
+        run: npm run test
 
       - name: Merge coverage artifacts
-        run: npm run coverage:merge
-
-      - name: Organize Playwright artifacts
         if: ${{ always() }}
         run: |
-          mkdir -p playwright-report
-          if [ -d playwright-report-ui ]; then
-            mv playwright-report-ui playwright-report/ui
-          fi
-          if [ -d playwright-report-api ]; then
-            mv playwright-report-api playwright-report/api
+          if [ -d coverage ]; then
+            npm run coverage:merge
+          else
+            echo "Skipping coverage merge because no coverage artifacts were produced."
           fi
 
-      - name: Upload Playwright UI HTML report
+      - name: Upload Playwright HTML report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-html-report-ui
-          path: playwright-report/ui
+          name: playwright-html-report
+          path: playwright-report
           if-no-files-found: ignore
           retention-days: 14
 
-      - name: Upload Playwright API HTML report
+      - name: Upload Playwright traces and videos
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-html-report-api
-          path: playwright-report/api
-          if-no-files-found: ignore
-          retention-days: 14
-
-      - name: Upload Playwright UI traces
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-traces-ui
-          path: playwright-report/ui/data
-          if-no-files-found: ignore
-          retention-days: 14
-
-      - name: Upload Playwright API traces
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-traces-api
-          path: playwright-report/api/data
+          name: playwright-test-results
+          path: test-results
           if-no-files-found: ignore
           retention-days: 14
 
