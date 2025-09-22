@@ -1,0 +1,91 @@
+name: Build & Test PeithoTest
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PRIVATE_REPO_SSH: git@github.com:tboulord/PeithoTest.git
+  DOCKER_COMPOSE_PATH: docker-compose.yml
+  PLAYWRIGHT_BASE_URL: http://localhost:3000
+  PLAYWRIGHT_API_URL: http://localhost:8000/api/v1
+  PLAYWRIGHT_HEALTHCHECK_URL: http://localhost:8000/health
+  PLAYWRIGHT_MOCKCHAT_URL: http://localhost:8080
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Playwright project
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add GitHub to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Clone private PeithoTest repository
+        run: git clone $PRIVATE_REPO_SSH private-peithotest
+
+      - name: Boot PeithoTest stack
+        working-directory: private-peithotest
+        run: docker compose -f "$DOCKER_COMPOSE_PATH" up -d --build
+
+      - name: Run Playwright test suite
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ env.PLAYWRIGHT_BASE_URL }}
+          PLAYWRIGHT_API_URL: ${{ env.PLAYWRIGHT_API_URL }}
+          PLAYWRIGHT_HEALTHCHECK_URL: ${{ env.PLAYWRIGHT_HEALTHCHECK_URL }}
+          PLAYWRIGHT_MOCKCHAT_URL: ${{ env.PLAYWRIGHT_MOCKCHAT_URL }}
+        run: npm run test
+
+      - name: Merge coverage artifacts
+        if: ${{ always() }}
+        run: |
+          if [ -d coverage ]; then
+            npm run coverage:merge
+          else
+            echo "Skipping coverage merge because no coverage artifacts were produced."
+          fi
+
+      - name: Upload Playwright HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-html-report
+          path: playwright-report
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Upload Playwright traces and videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: test-results
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Shutdown PeithoTest stack
+        if: always()
+        working-directory: private-peithotest
+        run: docker compose -f "$DOCKER_COMPOSE_PATH" down -v
