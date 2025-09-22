@@ -9,6 +9,7 @@ test.describe('Credential login flow', () => {
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       test.skip(
+        true,
         `Skipping login UI test because the frontend at "${baseUiUrl}" is unreachable (${errorMessage}).`
       );
       return;
