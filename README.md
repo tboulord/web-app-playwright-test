@@ -6,7 +6,7 @@ Playwright reports as workflow artifacts.
 
 ## Features
 
-- TypeScript Playwright project configured for browser-driven UI (`tests/e2e`) and API (`tests/api`) suites.
+- TypeScript Playwright project configured for browser-driven UI (`tests/e2e`) covering Desktop Chromium and Mobile Safari (iPhone 12 emulation) alongside API (`tests/api`) suites.
 - Docker image and Compose definition to execute the test suite in a reproducible container.
 - GitHub Actions workflow ready to authenticate against the private PeithoTest repository via
   deploy keys, build the application with `docker-compose`, and run the tests.
@@ -17,7 +17,7 @@ Playwright reports as workflow artifacts.
 
 The `tests/` directory is organised so contributors can immediately find the right building blocks:
 
-- `tests/e2e/` hosts cross-browser UI scenarios that interact with the product via real browsers.
+- `tests/e2e/` hosts cross-browser UI scenarios that interact with the product via real browsers, currently Desktop Chromium and Mobile Safari via the iPhone 12 emulation profile.
   Reusable page objects live under `tests/e2e/pom/` (`LoginPage`, `DashboardPage`, `CampaignListPage`,
   `NewCampaignPage`, `CampaignDetailPage`) to keep the specs declarative and resilient to DOM
   changes.
@@ -82,7 +82,7 @@ stack (for example, `http://backend:8000/api/v1`).
 
 ### 3. Run tests locally
 
-Run the full matrix of browser and API projects:
+Run the full matrix of configured UI (Chromium desktop and iPhone 12 emulation) and API projects:
 
 ```bash
 npm run test

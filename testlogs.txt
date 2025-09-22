@@ -1,0 +1,1846 @@
+  1) [chromium] › tests/e2e/auth.spec.ts:31:7 › Authentication › login form passes focused accessibility checks 
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      33 |     await loginPage.goto();
+      34 |
+    > 35 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      36 |       .include(loginPage.form)
+      37 |       .analyze();
+      38 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/auth.spec.ts:35:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/auth-Authentication-login--472af-ocused-accessibility-checks-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/auth-Authentication-login--472af-ocused-accessibility-checks-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/auth-Authentication-login--472af-ocused-accessibility-checks-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      33 |     await loginPage.goto();
+      34 |
+    > 35 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      36 |       .include(loginPage.form)
+      37 |       .analyze();
+      38 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/auth.spec.ts:35:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/auth-Authentication-login--472af-ocused-accessibility-checks-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/auth-Authentication-login--472af-ocused-accessibility-checks-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/auth-Authentication-login--472af-ocused-accessibility-checks-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-chromium/auth-Authentication-login--472af-ocused-accessibility-checks-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-chromium/auth-Authentication-login--472af-ocused-accessibility-checks-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/campaigns.spec.ts:30:7 › Campaign management › campaign dashboard section has no critical accessibility regressions 
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      35 |     await expect(campaignListPage.heading).toBeVisible();
+      36 |
+    > 37 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      38 |       .include(campaignListPage.contentSection)
+      39 |       .analyze();
+      40 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:37:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      35 |     await expect(campaignListPage.heading).toBeVisible();
+      36 |
+    > 37 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      38 |       .include(campaignListPage.contentSection)
+      39 |       .analyze();
+      40 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:37:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-chromium/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/campaigns.spec.ts:44:7 › Campaign management › creates a campaign and lands on its detail view 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:59:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:59:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-chromium/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/e2e/campaigns.spec.ts:70:7 › Campaign management › blocks campaign creation when no connector is selected 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Create' })
+        - locator resolved to <button disabled class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-primary text-primary-foreground hover:scale-[1.02] shadow-md hover:shadow-lg h-11 px-6 py-2.5">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        49 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:53
+
+      51 |
+      52 |   async submit() {
+    > 53 |     await this.createButton.click();
+         |                             ^
+      54 |   }
+      55 |
+      56 |   get missingConnectorError(): Locator {
+        at NewCampaignPage.submit (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:53:29)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:88:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Create' })
+        - locator resolved to <button disabled class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-primary text-primary-foreground hover:scale-[1.02] shadow-md hover:shadow-lg h-11 px-6 py-2.5">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        49 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:53
+
+      51 |
+      52 |   async submit() {
+    > 53 |     await this.createButton.click();
+         |                             ^
+      54 |   }
+      55 |
+      56 |   get missingConnectorError(): Locator {
+        at NewCampaignPage.submit (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:53:29)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:88:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-chromium/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/e2e/campaigns.spec.ts:93:7 › Campaign management › deletes a campaign from detail view and removes it from the list 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:107:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:107:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-chromium/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-chromium/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-chromium/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [firefox] › tests/e2e/auth.spec.ts:31:7 › Authentication › login form passes focused accessibility checks 
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      33 |     await loginPage.goto();
+      34 |
+    > 35 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      36 |       .include(loginPage.form)
+      37 |       .analyze();
+      38 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/auth.spec.ts:35:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/auth-Authentication-login--472af-ocused-accessibility-checks-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/auth-Authentication-login--472af-ocused-accessibility-checks-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-firefox/auth-Authentication-login--472af-ocused-accessibility-checks-firefox/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      33 |     await loginPage.goto();
+      34 |
+    > 35 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      36 |       .include(loginPage.form)
+      37 |       .analyze();
+      38 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/auth.spec.ts:35:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/auth-Authentication-login--472af-ocused-accessibility-checks-firefox-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/auth-Authentication-login--472af-ocused-accessibility-checks-firefox-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-firefox/auth-Authentication-login--472af-ocused-accessibility-checks-firefox-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-firefox/auth-Authentication-login--472af-ocused-accessibility-checks-firefox-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-firefox/auth-Authentication-login--472af-ocused-accessibility-checks-firefox-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [firefox] › tests/e2e/campaigns.spec.ts:30:7 › Campaign management › campaign dashboard section has no critical accessibility regressions 
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      35 |     await expect(campaignListPage.heading).toBeVisible();
+      36 |
+    > 37 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      38 |       .include(campaignListPage.contentSection)
+      39 |       .analyze();
+      40 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:37:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-firefox/video.webm
+    ─────────────────────────────────────────────────────────────────────────────────────��──────────
+
+    Error Context: test-results/ui-firefox/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-firefox/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      35 |     await expect(campaignListPage.heading).toBeVisible();
+      36 |
+    > 37 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      38 |       .include(campaignListPage.contentSection)
+      39 |       .analyze();
+      40 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:37:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-firefox-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-firefox-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-firefox/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-firefox-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-firefox-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-firefox/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-firefox-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [firefox] › tests/e2e/campaigns.spec.ts:44:7 › Campaign management › creates a campaign and lands on its detail view 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:59:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-firefox/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-firefox/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:59:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-firefox-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-firefox-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-firefox/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-firefox-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-firefox-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-firefox/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-firefox-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [firefox] › tests/e2e/campaigns.spec.ts:70:7 › Campaign management › blocks campaign creation when no connector is selected 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Create' })
+        - locator resolved to <button disabled class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-primary text-primary-foreground hover:scale-[1.02] shadow-md hover:shadow-lg h-11 px-6 py-2.5">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        44 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:53
+
+      51 |
+      52 |   async submit() {
+    > 53 |     await this.createButton.click();
+         |                             ^
+      54 |   }
+      55 |
+      56 |   get missingConnectorError(): Locator {
+        at NewCampaignPage.submit (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:53:29)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:88:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-firefox/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-firefox/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Create' })
+        - locator resolved to <button disabled class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-primary text-primary-foreground hover:scale-[1.02] shadow-md hover:shadow-lg h-11 px-6 py-2.5">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        41 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:53
+
+      51 |
+      52 |   async submit() {
+    > 53 |     await this.createButton.click();
+         |                             ^
+      54 |   }
+      55 |
+      56 |   get missingConnectorError(): Locator {
+        at NewCampaignPage.submit (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:53:29)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:88:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-firefox-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-firefox-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-firefox/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-firefox-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-firefox-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-firefox/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-firefox-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [firefox] › tests/e2e/campaigns.spec.ts:93:7 › Campaign management › deletes a campaign from detail view and removes it from the list 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:107:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-firefox/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-firefox/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:107:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-firefox-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-firefox-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-firefox/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-firefox-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-firefox/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-firefox-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-firefox/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-firefox-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [webkit] › tests/e2e/auth.spec.ts:31:7 › Authentication › login form passes focused accessibility checks 
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      33 |     await loginPage.goto();
+      34 |
+    > 35 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      36 |       .include(loginPage.form)
+      37 |       .analyze();
+      38 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/auth.spec.ts:35:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/auth-Authentication-login--472af-ocused-accessibility-checks-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/auth-Authentication-login--472af-ocused-accessibility-checks-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/auth-Authentication-login--472af-ocused-accessibility-checks-webkit/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      33 |     await loginPage.goto();
+      34 |
+    > 35 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      36 |       .include(loginPage.form)
+      37 |       .analyze();
+      38 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/auth.spec.ts:35:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/auth-Authentication-login--472af-ocused-accessibility-checks-webkit-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/auth-Authentication-login--472af-ocused-accessibility-checks-webkit-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/auth-Authentication-login--472af-ocused-accessibility-checks-webkit-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-webkit/auth-Authentication-login--472af-ocused-accessibility-checks-webkit-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-webkit/auth-Authentication-login--472af-ocused-accessibility-checks-webkit-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [webkit] › tests/e2e/campaigns.spec.ts:30:7 › Campaign management › campaign dashboard section has no critical accessibility regressions 
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      35 |     await expect(campaignListPage.heading).toBeVisible();
+      36 |
+    > 37 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      38 |       .include(campaignListPage.contentSection)
+      39 |       .analyze();
+      40 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:37:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-webkit/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      35 |     await expect(campaignListPage.heading).toBeVisible();
+      36 |
+    > 37 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      38 |       .include(campaignListPage.contentSection)
+      39 |       .analyze();
+      40 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:37:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-webkit-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-webkit-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-webkit-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-webkit-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-webkit/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-webkit-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [webkit] › tests/e2e/campaigns.spec.ts:44:7 › Campaign management › creates a campaign and lands on its detail view 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:59:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-webkit/error-context.md
+
+    Retry #1 ──────────────��────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:59:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-webkit-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-webkit-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-webkit-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-webkit-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-webkit/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-webkit-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [webkit] › tests/e2e/campaigns.spec.ts:70:7 › Campaign management › blocks campaign creation when no connector is selected 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Create' })
+        - locator resolved to <button disabled class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-primary text-primary-foreground hover:scale-[1.02] shadow-md hover:shadow-lg h-11 px-6 py-2.5">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        49 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:53
+
+      51 |
+      52 |   async submit() {
+    > 53 |     await this.createButton.click();
+         |                             ^
+      54 |   }
+      55 |
+      56 |   get missingConnectorError(): Locator {
+        at NewCampaignPage.submit (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:53:29)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:88:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-webkit/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Create' })
+        - locator resolved to <button disabled class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-primary text-primary-foreground hover:scale-[1.02] shadow-md hover:shadow-lg h-11 px-6 py-2.5">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        49 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:53
+
+      51 |
+      52 |   async submit() {
+    > 53 |     await this.createButton.click();
+         |                             ^
+      54 |   }
+      55 |
+      56 |   get missingConnectorError(): Locator {
+        at NewCampaignPage.submit (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:53:29)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:88:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-webkit-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-webkit-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-webkit-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-webkit-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-webkit/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-webkit-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [webkit] › tests/e2e/campaigns.spec.ts:93:7 › Campaign management › deletes a campaign from detail view and removes it from the list 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:107:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-webkit/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:107:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-webkit-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-webkit-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-webkit/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-webkit-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-webkit/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-webkit-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-webkit/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-webkit-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [iphone-12] › tests/e2e/auth.spec.ts:31:7 › Authentication › login form passes focused accessibility checks 
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      33 |     await loginPage.goto();
+      34 |
+    > 35 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      36 |       .include(loginPage.form)
+      37 |       .analyze();
+      38 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/auth.spec.ts:35:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/auth-Authentication-login--472af-ocused-accessibility-checks-iphone-12/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/auth-Authentication-login--472af-ocused-accessibility-checks-iphone-12/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/auth-Authentication-login--472af-ocused-accessibility-checks-iphone-12/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      33 |     await loginPage.goto();
+      34 |
+    > 35 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      36 |       .include(loginPage.form)
+      37 |       .analyze();
+      38 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/auth.spec.ts:35:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/auth-Authentication-login--472af-ocused-accessibility-checks-iphone-12-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/auth-Authentication-login--472af-ocused-accessibility-checks-iphone-12-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/auth-Authentication-login--472af-ocused-accessibility-checks-iphone-12-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/auth-Authentication-login--472af-ocused-accessibility-checks-iphone-12-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-iphone-12/auth-Authentication-login--472af-ocused-accessibility-checks-iphone-12-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [iphone-12] › tests/e2e/campaigns.spec.ts:30:7 › Campaign management › campaign dashboard section has no critical accessibility regressions 
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      35 |     await expect(campaignListPage.heading).toBeVisible();
+      36 |
+    > 37 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      38 |       .include(campaignListPage.contentSection)
+      39 |       .analyze();
+      40 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:37:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-iphone-12/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-iphone-12/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-iphone-12/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Attempting to serialize unexpected value at position "context.include[0]._frame._platform.boxedStackPrefixes": () => {
+        if (process.env.PWDEBUGIMPL)
+          return [];
+        return [coreDir, ...boxedStackPrefixes];
+      }
+
+      35 |     await expect(campaignListPage.heading).toBeVisible();
+      36 |
+    > 37 |     const results = await new AxeBuilder({ page })
+         |                     ^
+      38 |       .include(campaignListPage.contentSection)
+      39 |       .analyze();
+      40 |
+        at AxeBuilder.runPartialRecursive (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:315:39)
+        at AxeBuilder.analyze (/home/runner/work/web-app-playwright-test/web-app-playwright-test/node_modules/@axe-core/playwright/dist/index.js:245:39)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:37:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-iphone-12-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-iphone-12-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-iphone-12-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-iphone-12-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-iphone-12/campaigns-Campaign-managem-78d5d-l-accessibility-regressions-iphone-12-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [iphone-12] › tests/e2e/campaigns.spec.ts:44:7 › Campaign management › creates a campaign and lands on its detail view 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:59:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-iphone-12/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-iphone-12/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-iphone-12/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:59:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-iphone-12-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-iphone-12-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-iphone-12-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-iphone-12-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-iphone-12/campaigns-Campaign-managem-0ca85-nd-lands-on-its-detail-view-iphone-12-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [iphone-12] › tests/e2e/campaigns.spec.ts:70:7 › Campaign management › blocks campaign creation when no connector is selected 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Create' })
+        - locator resolved to <button disabled class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-primary text-primary-foreground hover:scale-[1.02] shadow-md hover:shadow-lg h-11 px-6 py-2.5">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        51 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:53
+
+      51 |
+      52 |   async submit() {
+    > 53 |     await this.createButton.click();
+         |                             ^
+      54 |   }
+      55 |
+      56 |   get missingConnectorError(): Locator {
+        at NewCampaignPage.submit (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:53:29)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:88:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-iphone-12/test-failed-1.png
+    ───────────────────────────────��────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-iphone-12/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-iphone-12/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Create' })
+        - locator resolved to <button disabled class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-primary text-primary-foreground hover:scale-[1.02] shadow-md hover:shadow-lg h-11 px-6 py-2.5">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        50 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:53
+
+      51 |
+      52 |   async submit() {
+    > 53 |     await this.createButton.click();
+         |                             ^
+      54 |   }
+      55 |
+      56 |   get missingConnectorError(): Locator {
+        at NewCampaignPage.submit (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:53:29)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:88:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-iphone-12-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-iphone-12-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-iphone-12-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-iphone-12-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-iphone-12/campaigns-Campaign-managem-fe13d-en-no-connector-is-selected-iphone-12-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [iphone-12] › tests/e2e/campaigns.spec.ts:93:7 › Campaign management › deletes a campaign from detail view and removes it from the list 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:107:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-iphone-12/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-iphone-12/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-iphone-12/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'SUT Connector *' })
+
+
+       at tests/e2e/pom/NewCampaignPage.ts:29
+
+      27 |
+      28 |   async selectConnector(name: string) {
+    > 29 |     await this.connectorSelect.click();
+         |                                ^
+      30 |     await this.page.getByRole("option", { name }).click();
+      31 |   }
+      32 |
+        at NewCampaignPage.selectConnector (/home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/pom/NewCampaignPage.ts:29:32)
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/campaigns.spec.ts:107:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-iphone-12-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-iphone-12-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-iphone-12-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-iphone-12-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-iphone-12/campaigns-Campaign-managem-e00d3-nd-removes-it-from-the-list-iphone-12-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [api] › tests/api/auth.spec.ts:46:7 › Auth API › POST /auth/login returns tokens for the seeded admin 
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          "user",
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+      60 |
+      61 |     const body = await response.json();
+    > 62 |     const parsed = loginResponseSchema.parse(body);
+         |                                        ^
+      63 |
+      64 |     expect(parsed.user.username).toBe(credentials.username);
+      65 |     expect(parsed.access_token).not.toHaveLength(0);
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/auth.spec.ts:62:40
+
+    Retry #1 ──────────���────────────────────────────────────────────────────────────────────────────
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          "user",
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+      60 |
+      61 |     const body = await response.json();
+    > 62 |     const parsed = loginResponseSchema.parse(body);
+         |                                        ^
+      63 |
+      64 |     expect(parsed.user.username).toBe(credentials.username);
+      65 |     expect(parsed.access_token).not.toHaveLength(0);
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/auth.spec.ts:62:40
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api/auth-Auth-API-POST-auth-lo-9241c-tokens-for-the-seeded-admin-api-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api/auth-Auth-API-POST-auth-lo-9241c-tokens-for-the-seeded-admin-api-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  22) [api] › tests/api/auth.spec.ts:88:7 › Auth API › GET /auth/me requires a bearer token and succeeds with the stored access_token 
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          "user",
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+      108 |
+      109 |     const loginJson = await loginResponse.json();
+    > 110 |     const { access_token: accessToken } = loginResponseSchema.parse(loginJson);
+          |                                                               ^
+      111 |
+      112 |     const authedContext = await playwrightRequest.newContext({
+      113 |       baseURL: API_BASE_URL,
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/auth.spec.ts:110:63
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          "user",
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+      108 |
+      109 |     const loginJson = await loginResponse.json();
+    > 110 |     const { access_token: accessToken } = loginResponseSchema.parse(loginJson);
+          |                                                               ^
+      111 |
+      112 |     const authedContext = await playwrightRequest.newContext({
+      113 |       baseURL: API_BASE_URL,
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/auth.spec.ts:110:63
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api/auth-Auth-API-GET-auth-me--643a6-ith-the-stored-access-token-api-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api/auth-Auth-API-GET-auth-me--643a6-ith-the-stored-access-token-api-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  23) [api] › tests/api/campaigns.spec.ts:91:7 › Campaigns API › GET /campaigns lists campaigns for the current tenant 
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          0,
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      },
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          1,
+          "id"
+        ],
+        "message": "Invalid UUID"
+      },
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          1,
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+       98 |
+       99 |     const body = await response.json();
+    > 100 |     const campaigns = campaignListSchema.parse(body);
+          |                                          ^
+      101 |
+      102 |     expect(campaigns.length).toBeGreaterThan(0);
+      103 |     expect(campaigns[0].providers.length).toBeGreaterThan(0);
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/campaigns.spec.ts:100:42
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          0,
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      },
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          1,
+          "id"
+        ],
+        "message": "Invalid UUID"
+      },
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          1,
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+       98 |
+       99 |     const body = await response.json();
+    > 100 |     const campaigns = campaignListSchema.parse(body);
+          |                                          ^
+      101 |
+      102 |     expect(campaigns.length).toBeGreaterThan(0);
+      103 |     expect(campaigns[0].providers.length).toBeGreaterThan(0);
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/campaigns.spec.ts:100:42
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api/campaigns-Campaigns-API-GE-37c5d-igns-for-the-current-tenant-api-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api/campaigns-Campaigns-API-GE-37c5d-igns-for-the-current-tenant-api-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24) [api] › tests/api/campaigns.spec.ts:106:7 › Campaigns API › POST /campaigns creates a campaign when sut_connector_id is provided 
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+      129 |
+      130 |       const json = await response.json();
+    > 131 |       const createdCampaign = campaignResponseSchema.parse(json);
+          |                                                      ^
+      132 |       createdCampaignId = createdCampaign.id;
+      133 |
+      134 |       expect(createdCampaign.name).toBe(payload.name);
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/campaigns.spec.ts:131:54
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+      129 |
+      130 |       const json = await response.json();
+    > 131 |       const createdCampaign = campaignResponseSchema.parse(json);
+          |                                                      ^
+      132 |       createdCampaignId = createdCampaign.id;
+      133 |
+      134 |       expect(createdCampaign.name).toBe(payload.name);
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/campaigns.spec.ts:131:54
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api/campaigns-Campaigns-API-PO-f2538-ut-connector-id-is-provided-api-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api/campaigns-Campaigns-API-PO-f2538-ut-connector-id-is-provided-api-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  25) [api] › tests/api/campaigns.spec.ts:160:7 › Campaigns API › DELETE /campaigns/{id} removes campaigns and returns 404 for unknown ids 
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+      171 |
+      172 |       const createdJson = await createResponse.json();
+    > 173 |       const createdCampaign = campaignResponseSchema.parse(createdJson);
+          |                                                      ^
+      174 |       campaignId = createdCampaign.id;
+      175 |
+      176 |       const deleteStart = performance.now();
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/campaigns.spec.ts:173:54
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    ZodError: [
+      {
+        "origin": "string",
+        "code": "invalid_format",
+        "format": "uuid",
+        "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+        "path": [
+          "tenant_id"
+        ],
+        "message": "Invalid UUID"
+      }
+    ]
+
+      171 |
+      172 |       const createdJson = await createResponse.json();
+    > 173 |       const createdCampaign = campaignResponseSchema.parse(createdJson);
+          |                                                      ^
+      174 |       campaignId = createdCampaign.id;
+      175 |
+      176 |       const deleteStart = performance.now();
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/api/campaigns.spec.ts:173:54
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api/campaigns-Campaigns-API-DE-9bfe2-returns-404-for-unknown-ids-api-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api/campaigns-Campaigns-API-DE-9bfe2-returns-404-for-unknown-ids-api-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  26) [iphone-12] › tests/e2e/auth.spec.ts:21:7 › Authentication › surfaces incorrect password feedback 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByText('Incorrect username or password')
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('Incorrect username or password')
+
+
+      26 |     await loginPage.login(credentials.username, "not-the-password");
+      27 |
+    > 28 |     await expect(loginPage.incorrectCredentialsAlert).toBeVisible();
+         |                                                       ^
+      29 |   });
+      30 |
+      31 |   test("login form passes focused accessibility checks", async ({ page }) => {
+        at /home/runner/work/web-app-playwright-test/web-app-playwright-test/tests/e2e/auth.spec.ts:28:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/auth-Authentication-surfaces-incorrect-password-feedback-iphone-12/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-iphone-12/auth-Authentication-surfaces-incorrect-password-feedback-iphone-12/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ui-iphone-12/auth-Authentication-surfaces-incorrect-password-feedback-iphone-12/error-context.md

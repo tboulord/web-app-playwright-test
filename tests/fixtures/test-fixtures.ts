@@ -1,4 +1,5 @@
 import { APIRequestContext, expect, request as playwrightRequest, test as base } from '@playwright/test';
+import { z } from 'zod';
 import type { AdminCredentials } from '../data/admin-credentials';
 import { getAdminCredentials } from '../data/admin-credentials';
 
@@ -48,9 +49,19 @@ export type CampaignResponse = {
 type CreateCampaignFixture = (overrides?: Partial<CampaignCreateRequest>) => Promise<CampaignResponse>;
 type CleanupCampaignFixture = (campaignId: string) => Promise<void>;
 
+type AuthenticatedAdminContext = {
+  context: APIRequestContext;
+  accessToken: string;
+  adminUserId: string;
+  tenantId: string;
+};
+
 type TestFixtures = {
   adminCredentials: AdminCredentials;
+  authenticatedAdmin: AuthenticatedAdminContext;
   apiContext: APIRequestContext;
+  adminTenantId: string;
+  adminUserId: string;
   createCampaignViaApi: CreateCampaignFixture;
   cleanupCampaign: CleanupCampaignFixture;
 };
@@ -91,7 +102,7 @@ function buildCampaignPayload(overrides: Partial<CampaignCreateRequest> = {}): C
   };
 }
 
-async function authenticateApiContext(adminCredentials: AdminCredentials): Promise<APIRequestContext> {
+async function authenticateApiContext(adminCredentials: AdminCredentials): Promise<AuthenticatedAdminContext> {
   const bootstrapContext = await playwrightRequest.newContext({
     baseURL: API_BASE_URL,
     extraHTTPHeaders: {
@@ -114,15 +125,24 @@ async function authenticateApiContext(adminCredentials: AdminCredentials): Promi
     }
 
     const loginJson = await loginResponse.json();
-    const accessToken: string | undefined = loginJson?.access_token;
+    const loginSchema = z
+      .object({
+        access_token: z.string().min(1),
+        user: z
+          .object({
+            id: z.string().uuid(),
+            tenant_id: z.string().uuid(),
+          })
+          .passthrough(),
+      })
+      .passthrough();
 
-    if (!accessToken) {
-      throw new Error('Login response did not include an access_token.');
-    }
+    const parsed = loginSchema.parse(loginJson);
+    const { access_token: accessToken, user } = parsed;
 
     await bootstrapContext.dispose();
 
-    return playwrightRequest.newContext({
+    const context = await playwrightRequest.newContext({
       baseURL: API_BASE_URL,
       extraHTTPHeaders: {
         Accept: 'application/json',
@@ -130,6 +150,13 @@ async function authenticateApiContext(adminCredentials: AdminCredentials): Promi
         'Content-Type': 'application/json',
       },
     });
+
+    return {
+      context,
+      accessToken,
+      adminUserId: user.id,
+      tenantId: user.tenant_id,
+    };
   } catch (error) {
     await bootstrapContext.dispose();
     throw error;
@@ -140,13 +167,22 @@ export const test = base.extend<TestFixtures>({
   adminCredentials: async ({}, use) => {
     await use(getAdminCredentials());
   },
-  apiContext: async ({ adminCredentials }, use) => {
-    const context = await authenticateApiContext(adminCredentials);
+  authenticatedAdmin: async ({ adminCredentials }, use) => {
+    const authenticated = await authenticateApiContext(adminCredentials);
     try {
-      await use(context);
+      await use(authenticated);
     } finally {
-      await context.dispose();
+      await authenticated.context.dispose();
     }
+  },
+  apiContext: async ({ authenticatedAdmin }, use) => {
+    await use(authenticatedAdmin.context);
+  },
+  adminTenantId: async ({ authenticatedAdmin }, use) => {
+    await use(authenticatedAdmin.tenantId);
+  },
+  adminUserId: async ({ authenticatedAdmin }, use) => {
+    await use(authenticatedAdmin.adminUserId);
   },
   createCampaignViaApi: async ({ apiContext }, use) => {
     const createCampaign: CreateCampaignFixture = async (overrides = {}) => {

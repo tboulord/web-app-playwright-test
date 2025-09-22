@@ -34,8 +34,15 @@ test.describe("Campaign management", () => {
     await campaignListPage.goto();
     await expect(campaignListPage.heading).toBeVisible();
 
+    const contentSectionHandle = await campaignListPage.contentSection.elementHandle();
+    if (!contentSectionHandle) {
+      throw new Error(
+        "Expected campaign list content section to be available for accessibility analysis",
+      );
+    }
+
     const results = await new AxeBuilder({ page })
-      .include(campaignListPage.contentSection)
+      .include(contentSectionHandle)
       .analyze();
 
     expect(results.violations).toEqual([]);

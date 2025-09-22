@@ -88,7 +88,7 @@ function buildCampaignPayload(
 }
 
 test.describe('Campaigns API', () => {
-  test('GET /campaigns lists campaigns for the current tenant', async ({ apiContext }) => {
+  test('GET /campaigns lists campaigns for the current tenant', async ({ apiContext, adminTenantId }) => {
     const start = performance.now();
     const response = await apiContext.get('campaigns');
     const elapsedMs = performance.now() - start;
@@ -101,9 +101,10 @@ test.describe('Campaigns API', () => {
 
     expect(campaigns.length).toBeGreaterThan(0);
     expect(campaigns[0].providers.length).toBeGreaterThan(0);
+    expect(campaigns.every((campaign) => campaign.tenant_id === adminTenantId)).toBe(true);
   });
 
-  test('POST /campaigns creates a campaign when sut_connector_id is provided', async ({ apiContext, cleanupCampaign }) => {
+  test('POST /campaigns creates a campaign when sut_connector_id is provided', async ({ apiContext, adminTenantId, cleanupCampaign }) => {
     const connectorsStart = performance.now();
     const connectorsResponse = await apiContext.get('campaigns/wizard/connectors');
     const connectorsElapsed = performance.now() - connectorsStart;
@@ -133,6 +134,7 @@ test.describe('Campaigns API', () => {
 
       expect(createdCampaign.name).toBe(payload.name);
       expect(createdCampaign.sut_connector_id).toBe(connector.id);
+      expect(createdCampaign.tenant_id).toBe(adminTenantId);
     } finally {
       if (createdCampaignId) {
         await cleanupCampaign(createdCampaignId);

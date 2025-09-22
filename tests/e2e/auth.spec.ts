@@ -32,8 +32,13 @@ test.describe("Authentication", () => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
 
+    const formHandle = await loginPage.form.elementHandle();
+    if (!formHandle) {
+      throw new Error("Expected login form element to be available for accessibility analysis");
+    }
+
     const results = await new AxeBuilder({ page })
-      .include(loginPage.form)
+      .include(formHandle)
       .analyze();
 
     expect(results.violations).toEqual([]);

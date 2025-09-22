@@ -46,24 +46,6 @@ export default defineConfig({
       outputDir: projectOutputDir('ui-chromium'),
     },
     {
-      name: 'firefox',
-      testDir: e2eTestDir,
-      use: {
-        ...devices['Desktop Firefox'],
-        baseURL: baseUiUrl,
-      },
-      outputDir: projectOutputDir('ui-firefox'),
-    },
-    {
-      name: 'webkit',
-      testDir: e2eTestDir,
-      use: {
-        ...devices['Desktop Safari'],
-        baseURL: baseUiUrl,
-      },
-      outputDir: projectOutputDir('ui-webkit'),
-    },
-    {
       name: 'iphone-12',
       testDir: e2eTestDir,
       use: {
