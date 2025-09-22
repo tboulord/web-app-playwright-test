@@ -17,7 +17,7 @@ test.describe('Credential login flow', () => {
 
     await expect(page.getByRole('heading', { name: 'Sign in to PeithoTest' })).toBeVisible();
 
-    await page.waitForTimeout(7_000);
+    await expect(page.getByLabel('Username')).toBeEnabled();
 
     await page.getByLabel('Username').fill(adminCredentials.username);
     await page.getByLabel('Password').fill(adminCredentials.password);
