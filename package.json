@@ -5,9 +5,7 @@
   "description": "Playwright UI test harness for the private PeithoTest application.",
   "scripts": {
     "test": "playwright test",
-    "test:ui": "playwright test --project=ui",
-    "test:ui:smoke": "playwright test --project=ui-smoke",
-    "test:a11y": "playwright test --project=a11y",
+    "test:ui": "playwright test --project=chromium --project=firefox",
     "test:api": "playwright test --project=api",
     "test:report": "playwright show-report",
     "coverage:merge": "nyc merge ./coverage ./coverage/coverage-merged.json",
