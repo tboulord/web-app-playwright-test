@@ -1,0 +1,24 @@
+services:
+  playwright:
+    build: .
+    env_file:
+      - .env
+    environment:
+      PLAYWRIGHT_BASE_URL: ${PLAYWRIGHT_BASE_URL:-http://frontend:3000}
+      PLAYWRIGHT_API_URL: ${PLAYWRIGHT_API_URL:-http://backend:8000/api/v1}
+      PLAYWRIGHT_HEALTHCHECK_URL: ${PLAYWRIGHT_HEALTHCHECK_URL:-http://backend:8000/health}
+      PLAYWRIGHT_MOCKCHAT_URL: ${PLAYWRIGHT_MOCKCHAT_URL:-http://mockchat:8080}
+    volumes:
+      - ./tests:/app/tests
+      - ./playwright-report:/app/playwright-report
+    command: >-
+      bash -lc "npx playwright test --reporter=html,list"
+    networks:
+      - peithotest-network
+
+volumes: {}
+
+networks:
+  peithotest-network:
+    external: true
+    name: peithotest_peithotest-network
