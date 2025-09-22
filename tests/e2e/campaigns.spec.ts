@@ -10,6 +10,7 @@ import { CampaignDetailPage } from "./pom/CampaignDetailPage";
 
 const DEFAULT_CONNECTOR_LABEL = "playwright-default-connector (custom)";
 
+// Logs into the UI as the seeded admin user.
 async function authenticate(page: Page) {
   const loginPage = new LoginPage(page);
   await loginPage.goto();
@@ -22,11 +23,13 @@ async function authenticate(page: Page) {
 }
 
 test.describe("Campaign management", () => {
+  // Ensures every scenario starts from an authenticated session.
   test.beforeEach(async ({ page }) => {
     await authenticate(page);
   });
 
 
+  // Validates the happy path of creating a campaign through the UI.
   test("creates a campaign and lands on its detail view", async ({ page }) => {
     const campaignListPage = new CampaignListPage(page);
     await campaignListPage.goto();
@@ -54,6 +57,7 @@ test.describe("Campaign management", () => {
   });
 
 
+  // Checks that deleting a campaign removes it from the list.
   test("deletes a campaign from detail view and removes it from the list", async ({
     page,
   }) => {
@@ -87,6 +91,7 @@ test.describe("Campaign management", () => {
     await expect(campaignListPage.campaignCard(campaignName)).toHaveCount(0);
   });
 
+  // Confirms a non-existent campaign shows the empty state.
   test("renders the empty state for a missing campaign id", async ({
     page,
   }) => {

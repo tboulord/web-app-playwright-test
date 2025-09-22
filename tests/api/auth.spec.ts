@@ -37,12 +37,14 @@ const errorResponseSchema = z
   })
   .passthrough();
 
+// Adds a trailing slash to API base URLs when one is missing.
 const ensureTrailingSlash = (url: string): string => (url.endsWith('/') ? url : `${url}/`);
 
 const API_BASE_URL = ensureTrailingSlash(process.env.PLAYWRIGHT_API_URL ?? 'http://localhost:8000/api/v1');
 const RESPONSE_BUDGET_MS = 1000;
 
 test.describe('Auth API', () => {
+  // Confirms that valid admin credentials return a usable access token.
   test('POST /auth/login returns tokens for the seeded admin', async ({ request }) => {
     const credentials = getAdminCredentials();
 
@@ -65,6 +67,7 @@ test.describe('Auth API', () => {
     expect(parsed.access_token).not.toHaveLength(0);
   });
 
+  // Ensures incorrect passwords are rejected with a 401 response.
   test('POST /auth/login rejects incorrect passwords with 401', async ({ request }) => {
     const credentials = getAdminCredentials();
 
@@ -85,6 +88,7 @@ test.describe('Auth API', () => {
     expect(parsed.detail.toLowerCase()).toContain('incorrect');
   });
 
+  // Verifies that fetching the current user requires and accepts a bearer token.
   test('GET /auth/me requires a bearer token and succeeds with the stored access_token', async ({ request }) => {
     const unauthorizedStart = performance.now();
     const unauthorizedResponse = await request.get('auth/me');

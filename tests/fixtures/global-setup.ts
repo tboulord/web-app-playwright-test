@@ -1,6 +1,7 @@
 import { APIRequestContext, request as playwrightRequest, type FullConfig } from '@playwright/test';
 import { getAdminCredentials } from '../data/admin-credentials';
 
+// Normalizes URLs to include a trailing slash for consistent request paths.
 const ensureTrailingSlash = (url: string): string => (url.endsWith('/') ? url : `${url}/`);
 
 const HEALTHCHECK_URL = process.env.PLAYWRIGHT_HEALTHCHECK_URL ?? 'http://localhost:8000/health';
@@ -8,10 +9,12 @@ const API_BASE_URL = ensureTrailingSlash(process.env.PLAYWRIGHT_API_URL ?? 'http
 const DEFAULT_CONNECTOR_NAME = 'playwright-default-connector';
 const DEFAULT_CAMPAIGN_NAME = 'Playwright Default Campaign';
 
+// Pauses execution for the specified number of milliseconds.
 async function wait(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// Polls the health endpoint until the API reports it is ready.
 async function ensureApiHealthy(context: APIRequestContext): Promise<void> {
   const maxAttempts = Number(process.env.PLAYWRIGHT_HEALTH_MAX_ATTEMPTS ?? 20);
   const intervalMs = Number(process.env.PLAYWRIGHT_HEALTH_INTERVAL_MS ?? 1_000);
@@ -35,6 +38,7 @@ async function ensureApiHealthy(context: APIRequestContext): Promise<void> {
   throw new Error(`API health check at ${HEALTHCHECK_URL} did not succeed within ${maxAttempts} attempts.`);
 }
 
+// Authenticates as the admin user and returns a configured API context.
 async function authenticateAdminContext(): Promise<APIRequestContext | null> {
   const adminCredentials = getAdminCredentials();
   const bootstrapContext = await playwrightRequest.newContext({
@@ -86,6 +90,7 @@ async function authenticateAdminContext(): Promise<APIRequestContext | null> {
   }
 }
 
+// Seeds a default connector if one does not already exist.
 async function ensureConnectorSeed(context: APIRequestContext): Promise<void> {
   try {
     const listResponse = await context.get('connector/connectors');
@@ -120,6 +125,7 @@ async function ensureConnectorSeed(context: APIRequestContext): Promise<void> {
   }
 }
 
+// Seeds a default campaign for UI flows when necessary.
 async function ensureCampaignSeed(context: APIRequestContext): Promise<void> {
   try {
     const listResponse = await context.get('campaigns');
@@ -176,6 +182,7 @@ async function ensureCampaignSeed(context: APIRequestContext): Promise<void> {
   }
 }
 
+// Prepares test prerequisites such as API readiness and seed data.
 export default async function globalSetup(_config: FullConfig): Promise<void> {
   const healthContext = await playwrightRequest.newContext();
   try {

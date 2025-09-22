@@ -1,6 +1,7 @@
 import { expect, test } from '../fixtures/test-fixtures';
 
 test.describe('Credential login flow', () => {
+  // Confirms the UI login flow leads to the dashboard.
   test('displays dashboard after signing in', async ({ page, adminCredentials }) => {
     const baseUiUrl = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:3000';
 

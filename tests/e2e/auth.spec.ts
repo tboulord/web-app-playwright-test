@@ -6,6 +6,7 @@ import { LoginPage } from "./pom/LoginPage";
 import { DashboardPage } from "./pom/DashboardPage";
 
 test.describe("Authentication", () => {
+  // Confirms that valid credentials lead to the dashboard view.
   test("allows signing in with valid credentials", async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
@@ -18,6 +19,7 @@ test.describe("Authentication", () => {
     await expect(dashboardPage.heading).toBeVisible();
   });
 
+  // Ensures an incorrect password shows the appropriate alert.
   test("surfaces incorrect password feedback", async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
@@ -28,6 +30,7 @@ test.describe("Authentication", () => {
     await expect(loginPage.incorrectCredentialsAlert).toBeVisible();
   });
 
+  // Verifies the login form is accessible according to axe-core.
   test("login form passes focused accessibility checks", async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();

@@ -3,6 +3,7 @@ import { z } from 'zod';
 import type { AdminCredentials } from '../data/admin-credentials';
 import { getAdminCredentials } from '../data/admin-credentials';
 
+// Ensures API URLs consistently include a trailing slash.
 const ensureTrailingSlash = (url: string): string => (url.endsWith('/') ? url : `${url}/`);
 
 const API_BASE_URL = ensureTrailingSlash(process.env.PLAYWRIGHT_API_URL ?? 'http://localhost:8000/api/v1');
@@ -66,6 +67,7 @@ type TestFixtures = {
   cleanupCampaign: CleanupCampaignFixture;
 };
 
+// Generates a campaign payload using defaults that work in tests.
 function buildCampaignPayload(overrides: Partial<CampaignCreateRequest> = {}): CampaignCreateRequest {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
   return {
@@ -102,6 +104,7 @@ function buildCampaignPayload(overrides: Partial<CampaignCreateRequest> = {}): C
   };
 }
 
+// Logs in via the API and returns a context scoped to the admin user.
 async function authenticateApiContext(adminCredentials: AdminCredentials): Promise<AuthenticatedAdminContext> {
   const bootstrapContext = await playwrightRequest.newContext({
     baseURL: API_BASE_URL,
@@ -164,9 +167,11 @@ async function authenticateApiContext(adminCredentials: AdminCredentials): Promi
 }
 
 export const test = base.extend<TestFixtures>({
+  // Provides seeded admin credentials to tests.
   adminCredentials: async ({}, use) => {
     await use(getAdminCredentials());
   },
+  // Supplies an authenticated API context tied to the admin account.
   authenticatedAdmin: async ({ adminCredentials }, use) => {
     const authenticated = await authenticateApiContext(adminCredentials);
     try {
@@ -175,16 +180,21 @@ export const test = base.extend<TestFixtures>({
       await authenticated.context.dispose();
     }
   },
+  // Re-exports the authenticated API request context for convenience.
   apiContext: async ({ authenticatedAdmin }, use) => {
     await use(authenticatedAdmin.context);
   },
+  // Provides the tenant id associated with the admin user.
   adminTenantId: async ({ authenticatedAdmin }, use) => {
     await use(authenticatedAdmin.tenantId);
   },
+  // Provides the admin user's unique identifier.
   adminUserId: async ({ authenticatedAdmin }, use) => {
     await use(authenticatedAdmin.adminUserId);
   },
+  // Exposes a helper to create campaigns through the API during tests.
   createCampaignViaApi: async ({ apiContext }, use) => {
+    // Builds and posts a campaign request with optional overrides.
     const createCampaign: CreateCampaignFixture = async (overrides = {}) => {
       const payload = buildCampaignPayload(overrides);
       const response = await apiContext.post('campaigns', { data: payload });
@@ -199,7 +209,9 @@ export const test = base.extend<TestFixtures>({
 
     await use(createCampaign);
   },
+  // Provides cleanup logic to remove campaigns created in tests.
   cleanupCampaign: async ({ apiContext }, use) => {
+    // Deletes the campaign if it exists and ignores prior removals.
     const cleanup: CleanupCampaignFixture = async (campaignId: string) => {
       if (!campaignId) return;
 

@@ -49,6 +49,7 @@ type CampaignCreatePayload = CampaignCreateRequest & {
   sut_connector_id?: string;
 };
 
+// Builds a campaign creation payload with sensible defaults for testing.
 function buildCampaignPayload(
   overrides: Partial<CampaignCreatePayload> = {}
 ): CampaignCreatePayload {
@@ -88,6 +89,7 @@ function buildCampaignPayload(
 }
 
 test.describe('Campaigns API', () => {
+  // Validates that campaigns are listed for the authenticated tenant.
   test('GET /campaigns lists campaigns for the current tenant', async ({ apiContext, adminTenantId }) => {
     const start = performance.now();
     const response = await apiContext.get('campaigns');
@@ -104,6 +106,7 @@ test.describe('Campaigns API', () => {
     expect(campaigns.every((campaign) => campaign.tenant_id === adminTenantId)).toBe(true);
   });
 
+  // Checks that campaigns can be created when supplied with a connector id.
   test('POST /campaigns creates a campaign when sut_connector_id is provided', async ({ apiContext, adminTenantId, cleanupCampaign }) => {
     const connectorsStart = performance.now();
     const connectorsResponse = await apiContext.get('campaigns/wizard/connectors');
@@ -142,6 +145,7 @@ test.describe('Campaigns API', () => {
     }
   });
 
+  // Ensures the API rejects creation when connector data is invalid.
   test('POST /campaigns returns 400 when required connector data is missing', async ({ apiContext }) => {
     const payload = buildCampaignPayload({
       sut_connector_id: randomUUID(),
@@ -159,6 +163,7 @@ test.describe('Campaigns API', () => {
     expect(parsed.detail.toLowerCase()).toContain('connector');
   });
 
+  // Confirms campaigns can be deleted and that unknown ids return 404.
   test('DELETE /campaigns/{id} removes campaigns and returns 404 for unknown ids', async ({ apiContext, cleanupCampaign }) => {
     let campaignId: string | undefined;
 

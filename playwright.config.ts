@@ -5,6 +5,7 @@ import path from 'path';
 // Load environment variables from .env when present.
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+// Normalizes configurable URLs to end with a trailing slash.
 const ensureTrailingSlash = (url: string): string => (url.endsWith('/') ? url : `${url}/`);
 
 const baseUiUrl = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:3000';
@@ -14,6 +15,7 @@ const expectTimeout = process.env.PLAYWRIGHT_EXPECT_TIMEOUT
   : undefined;
 const e2eTestDir = path.resolve(__dirname, 'tests/e2e');
 const apiTestDir = path.resolve(__dirname, 'tests/api');
+// Derives a per-project output directory for Playwright artifacts.
 const projectOutputDir = (name: string) => path.resolve(__dirname, 'test-results', name);
 
 export default defineConfig({
