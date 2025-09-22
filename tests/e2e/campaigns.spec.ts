@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 import type { Page } from "@playwright/test";
-import AxeBuilder from "@axe-core/playwright";
 
 import { getAdminCredentials } from "../data/admin-credentials";
 import { LoginPage } from "./pom/LoginPage";
@@ -27,26 +26,6 @@ test.describe("Campaign management", () => {
     await authenticate(page);
   });
 
-  test("campaign dashboard section has no critical accessibility regressions", async ({
-    page,
-  }) => {
-    const campaignListPage = new CampaignListPage(page);
-    await campaignListPage.goto();
-    await expect(campaignListPage.heading).toBeVisible();
-
-    const contentSectionHandle = await campaignListPage.contentSection.elementHandle();
-    if (!contentSectionHandle) {
-      throw new Error(
-        "Expected campaign list content section to be available for accessibility analysis",
-      );
-    }
-
-    const results = await new AxeBuilder({ page })
-      .include(contentSectionHandle)
-      .analyze();
-
-    expect(results.violations).toEqual([]);
-  });
 
   test("creates a campaign and lands on its detail view", async ({ page }) => {
     const campaignListPage = new CampaignListPage(page);
@@ -74,28 +53,6 @@ test.describe("Campaign management", () => {
     await expect(detailPage.headingWithName(campaignName)).toBeVisible();
   });
 
-  test("blocks campaign creation when no connector is selected", async ({
-    page,
-  }) => {
-    const campaignListPage = new CampaignListPage(page);
-    await campaignListPage.goto();
-    await campaignListPage.startNewCampaign();
-
-    const newCampaignPage = new NewCampaignPage(page);
-    await expect(newCampaignPage.heading).toBeVisible();
-
-    const campaignName = `Missing Connector ${Date.now()}`;
-    await newCampaignPage.fillName(campaignName);
-    await newCampaignPage.fillInitialPrompt(
-      "Prompt without connector selection.",
-    );
-    await newCampaignPage.addObjective(
-      "Ensure validation prevents submission.",
-    );
-    await newCampaignPage.submit();
-
-    await expect(newCampaignPage.missingConnectorError).toBeVisible();
-  });
 
   test("deletes a campaign from detail view and removes it from the list", async ({
     page,

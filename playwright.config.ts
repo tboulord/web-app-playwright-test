@@ -28,8 +28,8 @@ export default defineConfig({
   ],
   use: {
     trace: 'on-first-retry',
-    video: 'retain-on-failure',
-    screenshot: 'only-on-failure',
+    video: 'on',
+    screenshot: 'on',
     ignoreHTTPSErrors: true,
   },
   expect: {
@@ -46,13 +46,13 @@ export default defineConfig({
       outputDir: projectOutputDir('ui-chromium'),
     },
     {
-      name: 'iphone-12',
+      name: 'firefox',
       testDir: e2eTestDir,
       use: {
-        ...devices['iPhone 12'],
+        ...devices['Desktop Firefox'],
         baseURL: baseUiUrl,
       },
-      outputDir: projectOutputDir('ui-iphone-12'),
+      outputDir: projectOutputDir('ui-firefox'),
     },
     {
       name: 'api',
