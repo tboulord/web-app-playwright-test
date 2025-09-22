@@ -28,8 +28,4 @@ export class CampaignListPage {
   get deletionSuccessToast(): Locator {
     return this.page.getByText("Campaign deleted successfully");
   }
-
-  get contentSection(): Locator {
-    return this.page.locator("div").filter({ has: this.heading }).first();
-  }
 }

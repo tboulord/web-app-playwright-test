@@ -39,23 +39,7 @@ export class NewCampaignPage {
     await this.objectiveInput.press("Enter");
   }
 
-  objectiveItem(text: string): Locator {
-    return this.page
-      .locator("div")
-      .filter({
-        hasText: text,
-        has: this.page.locator("button"),
-      })
-      .first();
-  }
-
   async submit() {
     await this.createButton.click();
-  }
-
-  get missingConnectorError(): Locator {
-    return this.page.getByText(
-      "Please select a SUT connector before creating the campaign",
-    );
   }
 }
